@@ -4,6 +4,16 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+ol.tutorial>li {
+  margin-bottom:30px;
+  font-size:16px;
+}
+
+ol.tutorial>li>img{
+  margin-top:10px;
+}
+
+
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
