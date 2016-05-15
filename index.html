@@ -1,45 +1,93 @@
+
 <!DOCTYPE html>
-<html lang="en-us">
-
-<head>
-    <meta charset="UTF-8">
-    <title>How-to-guide-twitch-api-js by eltonium</title>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-</head>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
 
-<body>
-    <section class="page-header">
-        <h1 class="project-name">How-to-guide-twitch-api-js</h1>
-        <h2 class="project-tagline">Tutorial for Beginners on using the Twitch API with vanilla Javascript.</h2>
-        <a href="https://github.com/eltonium/how-to-guide-twitch-api-js" class="btn">View on GitHub</a>
+    <title>Navbar Template for Bootstrap</title>
 
-    </section>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <section class="main-content">
-        <h3>
-<a id="intro-page" class="anchor" href="#intro-page" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Background</h3>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
-        <p>Video game streaming is fast-becoming a mainstay in the lives of young millennials in the 21st century. The accessibility of the internet and streaming hardware has turned couch gaming sessions into virtual spectator festivals. From single-player “First Playthroughs” to football-audience sized e-Sports, there are an abundant amount of streams for a diverse audience of gamers in the 21st century. At the forefront of this is Twitch.tv, a popular live-streaming platform that has more than 100 million unique visitors per month.
+    <!-- Custom styles for this template -->
+    <link href="navbar.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Twitch API Tutorial</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-header">Navigating the Twitch API</li>
+                  <li><a href="background.html">A Few Words on API</a></li>
+                  <li><a href="twitch-client-id.html">Twitch Client ID</a></li>
+                  <li><a href="http-requests.html">HTTP Requests</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li class="dropdown-header">Embedding Video</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h1>Twitch.tv API Javascript Tutorial</h1>
+        <p>Video game streaming is fast-becoming a mainstay in the lives of young millennials in the 21st century. The accessibility of the internet and streaming hardware has turned couch gaming sessions into virtual spectator festivals. From single-player “First Playthroughs” to massive e-Sports tournaments, there are streams for all types of gamers. At the forefront of this is Twitch.tv, a popular live-streaming platform that has more than 100 million unique visitors per month.</p>
+        <p>This tutorial will show you how to navigate and make use of Twitch.tv's API using javascript. It is intended for beginners with minimal javascript background.
+
+        <p>
+          <a class="btn btn-lg btn-primary" href="background.html" role="button">Start &raquo;</a>
         </p>
-        
-        <h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
+      </div>
 
-        <p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
+    </div> <!-- /container -->
 
-        <footer class="site-footer">
-            <span class="site-footer-owner"><a href="https://github.com/eltonium/how-to-guide-twitch-api-js">How-to-guide-twitch-api-js</a> is maintained by <a href="https://github.com/eltonium">eltonium</a>.</span>
-
-            <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-        </footer>
-
-    </section>
-
-
-</body>
-
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+  </body>
 </html>
