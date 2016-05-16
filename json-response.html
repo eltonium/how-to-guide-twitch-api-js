@@ -72,27 +72,28 @@
 
         <!-- Main component for a primary marketing message or call to action -->
         <div class="jumbotron">
-            <h1>Twitch Client-ID</h1>
-            <p>To work with the Twitch API, we have to get a Client ID (a.k.a. API Key) tied to our account.</p>
-            <ol class="tutorial">
-                <li> If you have not done so already, register an account and sign in on the <a href="https://www.twitch.tv/">Twitch home page</a></li>
-                <li>Navigate to the <a href="https://www.twitch.tv/settings/connections">Connections page in Twitch settings</a>
-                    <br/><img src="images/twitch-client-id-1.jpg"></img>
-                </li>
-                <li>From there scroll down to the <i>OTHER CONNECTIONS</i> section and click on <i>Register your application</i>
-                    <br/><img src="images/twitch-client-id-2.jpg"></img>
-                </li>
-                <li>Fill in the application form. The Redirect URI is important if your application requires users to perform any sign-in. For now, set this as <i>http://localhost</i> for testing.<img src="images/twitch-client-id-3.jpg"></img>
-                </li>
-                <li>You should now receive a Client ID. For tutorial purposes, we will use <code>ti1wfmhldcfp8b5qmepnjqx6scaoow6</code>. However, this is normally not shared and I encourage you to substitute your own ID in place of this.<img src="images/twitch-client-id-4.jpg"></img>
-                </li>
-            </ol>
-            <p>Congratulations, you have your very own Client ID and are ready to start making calls to the Twitch API.
+            <h1>JSON Response</h1>
+            <p>The response from our request is sent back to us in the JavaScript Object Notation (JSON) format. To read more about this format, visit the <a href="http://www.json.org/">official site</a>. We’ll focus on working with the response. Let’s look
+                back at our original program.</p>
+            <p><pre><code>request.addEventListener("load", function() {
+                var response = JSON.parse(request.responseText);
+                ...
+              }</code></pre></p>
+
+            <p>Specifically, let's look at this line. <code>var response = JSON.parse(request.responseText)</code></p>
+            <p>When we our API call is finished, the response is stored as a string in the request object i.e. <code>request.responseText</code></p>
+            <p>To convert the string to a JavaScript object, we call the built-in function <code>JSON.parse()</code> and assign it to the variable we will work with.</p>
+            <p>If we call <code>console.log(response)</code> at this point, we get the following output in the console.</p>
+            <img src="images/json-response-1.jpg"></img>
+            <p>This may look overwhelming, but it’s actually quite simple to navigate. For example, if we wanted to get the name of the first stream returned, we access it like so <code>response.streams[0].channel.name</code>
             </p>
+            <p>To get this, we start at the root of the object and move outward. In this case, response is the root. Root to streams[0] to channel to name. Visually, the movement through the tree looks like this.</p>
+            <img src="images/json-response-2.jpg"></img>
+            <p>Now that we're familiar with the format of our response and how to get it, let's look at how to do useful things with it, such as embedding previews of our queries.</p>
             <div class="page-nav">
                 <p>
-                    <a class="btn btn-lg btn-primary" href="index.html" role="button">&laquo; Back</a>
-                    <a class="btn btn-lg btn-primary" href="http-requests.html" role="button">Next &raquo;</a>
+                    <a class="btn btn-lg btn-primary" href="twitch-api-docs.html" role="button">&laquo; Back</a>
+                    <a class="btn btn-lg btn-primary" href="embed-preview.html" role="button">Next &raquo;</a>
                 </p>
             </div>
         </div>

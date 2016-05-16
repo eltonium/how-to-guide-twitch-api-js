@@ -72,27 +72,30 @@
 
         <!-- Main component for a primary marketing message or call to action -->
         <div class="jumbotron">
-            <h1>Twitch Client-ID</h1>
-            <p>To work with the Twitch API, we have to get a Client ID (a.k.a. API Key) tied to our account.</p>
+            <h1>Twitch API Documentation</h1>
+            <p>Navigating the <a href="https://github.com/justintv/Twitch-API">official documentation</a> is simple if we know what we want. Recall that our goal was to get a list of <b>STREAMS</b> for the <b>GAME</b> HearthStone. We need to populate <code>request.open(requestMethod, queryURL + queryString);</code>                with the correct method and query.</p>
             <ol class="tutorial">
-                <li> If you have not done so already, register an account and sign in on the <a href="https://www.twitch.tv/">Twitch home page</a></li>
-                <li>Navigate to the <a href="https://www.twitch.tv/settings/connections">Connections page in Twitch settings</a>
-                    <br/><img src="images/twitch-client-id-1.jpg"></img>
-                </li>
-                <li>From there scroll down to the <i>OTHER CONNECTIONS</i> section and click on <i>Register your application</i>
-                    <br/><img src="images/twitch-client-id-2.jpg"></img>
-                </li>
-                <li>Fill in the application form. The Redirect URI is important if your application requires users to perform any sign-in. For now, set this as <i>http://localhost</i> for testing.<img src="images/twitch-client-id-3.jpg"></img>
-                </li>
-                <li>You should now receive a Client ID. For tutorial purposes, we will use <code>ti1wfmhldcfp8b5qmepnjqx6scaoow6</code>. However, this is normally not shared and I encourage you to substitute your own ID in place of this.<img src="images/twitch-client-id-4.jpg"></img>
-                </li>
+                <li>We head over to the main page and find the section labeled Streams. Here we see that the valid request methods are GET. API calls are usually GET or POST requests.
+                    <br/><img src="images/twitch-api-doc-1.jpg"></img>
+                    <br/>We can either pass the method directly as a string or through a variable like so <code>var requestMethod = "GET";</code> </li>
+                <li>We now need to get our query. Near the top of the page, we find the base URL format of queries. Also note that data requests and responses are sent in JSON. This will be important later.
+                    <br/><img src="images/twitch-api-doc-3.jpg"></img>
+                    <br/>All our queries will start with <code>https://api.twitch.tv/kraken</code></li>
+                <li>To get the final part of our query, we'll need to navigate to the specific API call.Technically, a query string of “/streams” is valid and would return a list of streams with the most viewers. However, we want streams specifically playing
+                    HearthStone.
+                    <br/><img src="images/twitch-api-doc-2.jpg"></img>
+                    <br/>We use the parameter <code>game</code> shown to filter the results for hearthstone. We end up with the formatted string: <code>/streams?game=Hearthstone%3A%20Heroes%20of%20Warcraft</code> The quickest way to find the name of a game
+                    is to look at the URL of the game's page on Twitch.</p>
+
+
             </ol>
-            <p>Congratulations, you have your very own Client ID and are ready to start making calls to the Twitch API.
+            <p>Our final function looks like this. <pre><code>request.open("GET","https://api.twitch.tv/kraken/streams?game=Hearthstone%3A%20Heroes%Warcraft")</code></pre>
             </p>
+            <p>In the next section, we'll look at the JSON response that we receive from our API call.</p>
             <div class="page-nav">
                 <p>
-                    <a class="btn btn-lg btn-primary" href="index.html" role="button">&laquo; Back</a>
-                    <a class="btn btn-lg btn-primary" href="http-requests.html" role="button">Next &raquo;</a>
+                    <a class="btn btn-lg btn-primary" href="http-requests.html" role="button">&laquo; Back</a>
+                    <a class="btn btn-lg btn-primary" href="json-response.html" role="button">Next &raquo;</a>
                 </p>
             </div>
         </div>
