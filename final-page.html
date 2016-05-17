@@ -61,30 +61,15 @@
 
         <!-- Main component for a primary marketing message or call to action -->
         <div class="jumbotron">
-            <h1>Twitch API Documentation</h1>
-            <p>Navigating the <a href="https://github.com/justintv/Twitch-API">official documentation</a> is simple if we know what we want. Recall that our goal was to get a list of <b>STREAMS</b> for the <b>GAME</b> HearthStone. We need to populate <code>request.open(requestMethod, queryURL + queryString);</code>                with the correct method and query.</p>
-            <ol class="tutorial">
-                <li>We head over to the main page and find the section labeled Streams. Here we see that the valid request methods are GET. API calls are usually GET or POST requests.
-                    <br/><img src="images/twitch-api-doc-1.jpg"></img>
-                    <br/>We can either pass the method directly as a string or through a variable like so <code>var requestMethod = "GET";</code> </li>
-                <li>We now need to get our query. Near the top of the page, we find the base URL format of queries. Also note that data requests and responses are sent in JSON. This will be important later.
-                    <br/><img src="images/twitch-api-doc-3.jpg"></img>
-                    <br/>All our queries will start with <code>https://api.twitch.tv/kraken</code></li>
-                <li>To get the final part of our query, we'll need to navigate to the specific API call.Technically, a query string of “/streams” is valid and would return a list of streams with the most viewers. However, we want streams specifically playing
-                    HearthStone.
-                    <br/><img src="images/twitch-api-doc-2.jpg"></img>
-                    <br/>We use the parameter <code>game</code> shown to filter the results for hearthstone. We end up with the formatted string: <code>/streams?game=Hearthstone%3A%20Heroes%20of%20Warcraft</code> The quickest way to find the name of a game
-                    is to look at the URL of the game's page on Twitch.</p>
+            <h1>Final Words</h1>
+            <p>Take a look at our initial application.</p>
+            <p><iframe width="100%" height="300" src="http://jsfiddle.net/eltonium/x6pb4vxp/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe></p>
+            <p>Hopefully everything makes sense now. We've gone over </p>
 
-
-            </ol>
-            <p>Our final function looks like this. <pre><code>request.open("GET","https://api.twitch.tv/kraken/streams?game=Hearthstone%3A%20Heroes%Warcraft")</code></pre>
-            </p>
-            <p>In the next section, we'll look at the JSON response that we receive from our API call.</p>
             <div class="page-nav">
                 <p>
-                    <a class="btn btn-lg btn-primary" href="http-requests.html" role="button">&laquo; Back</a>
-                    <a class="btn btn-lg btn-primary" href="json-response.html" role="button">Next &raquo;</a>
+                    <a class="btn btn-lg btn-primary" href="twitch-api-docs.html" role="button">&laquo; Back</a>
+                    <a class="btn btn-lg btn-primary" href="embed-preview.html" role="button">Next &raquo;</a>
                 </p>
             </div>
         </div>
@@ -100,6 +85,7 @@
         window.jQuery || document.write('<script src="jquery.min.js"><\/script>')
     </script>
     <script src="js/bootstrap.min.js"></script>
+
 </body>
 
 </html>

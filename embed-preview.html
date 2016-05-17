@@ -61,30 +61,50 @@
 
         <!-- Main component for a primary marketing message or call to action -->
         <div class="jumbotron">
-            <h1>Twitch API Documentation</h1>
-            <p>Navigating the <a href="https://github.com/justintv/Twitch-API">official documentation</a> is simple if we know what we want. Recall that our goal was to get a list of <b>STREAMS</b> for the <b>GAME</b> HearthStone. We need to populate <code>request.open(requestMethod, queryURL + queryString);</code>                with the correct method and query.</p>
-            <ol class="tutorial">
-                <li>We head over to the main page and find the section labeled Streams. Here we see that the valid request methods are GET. API calls are usually GET or POST requests.
-                    <br/><img src="images/twitch-api-doc-1.jpg"></img>
-                    <br/>We can either pass the method directly as a string or through a variable like so <code>var requestMethod = "GET";</code> </li>
-                <li>We now need to get our query. Near the top of the page, we find the base URL format of queries. Also note that data requests and responses are sent in JSON. This will be important later.
-                    <br/><img src="images/twitch-api-doc-3.jpg"></img>
-                    <br/>All our queries will start with <code>https://api.twitch.tv/kraken</code></li>
-                <li>To get the final part of our query, we'll need to navigate to the specific API call.Technically, a query string of “/streams” is valid and would return a list of streams with the most viewers. However, we want streams specifically playing
-                    HearthStone.
-                    <br/><img src="images/twitch-api-doc-2.jpg"></img>
-                    <br/>We use the parameter <code>game</code> shown to filter the results for hearthstone. We end up with the formatted string: <code>/streams?game=Hearthstone%3A%20Heroes%20of%20Warcraft</code> The quickest way to find the name of a game
-                    is to look at the URL of the game's page on Twitch.</p>
+            <h1>Embedding Previews and Streams</h1>
+            <p>Now that we have all this data from our API, we can now do useful things with it, like embedding previews or inline frames (iframes). </p>
+            <p>Keep in mind that data must be returned from the API call before we can use it. This is the purpose of <code>request.addEventListener("load", callback)</code> An extremely simple explanation is that when the request is loaded, perform the
+                callback function.</p>
+            <p><pre><code>request.addEventListener("load", function() {
+    var response = JSON.parse(request.responseText);
 
+    //Loop through all stream objects in response.
+    for (var p in response.streams) {
 
-            </ol>
-            <p>Our final function looks like this. <pre><code>request.open("GET","https://api.twitch.tv/kraken/streams?game=Hearthstone%3A%20Heroes%Warcraft")</code></pre>
-            </p>
-            <p>In the next section, we'll look at the JSON response that we receive from our API call.</p>
+        //Values in response body.
+        var streamName = response.streams[p].channel.name;
+        var streamPreview = response.streams[p].preview.medium;
+        var streamLink = response.streams[p].channel.url;
+
+        //Creating elements to store name,preview image, and link.
+        var newImage = document.createElement('img');
+        newImage.src = streamPreview;
+
+        var newLink = document.createElement('a');
+        newLink.href = streamLink;
+
+        var newDiv = document.createElement('div');
+        newDiv.classList.add("stream");
+
+        var newP = document.createElement('p');
+        newP.textContent = streamName;
+
+        //Linking and structuring the document.
+        newLink.appendChild(newImage);
+        newDiv.appendChild(newP);
+        newDiv.appendChild(newLink);
+        document.body.appendChild(newDiv);
+    }
+    console.log(response);
+});</code></pre></p>
+            <p>The first key method here is <code>document.createElement({tag})</code>. We use this to create new elements by passing the tag name in <code>{tag}</code>. In the example above, we created <code>'img', 'a', 'div', 'p'</code> elements</p>
+            <p>The second method is <code>{element}.appendChild({element})</code>. This allows us to structure our web-page according to the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction">DOM interface</a></p>
+            <p>We set attributes to the created elements through the dot operator. For example <code>newImage.src = streamPreview</code> creates an html tag <code>&lt;img src=streamLink&gt;</code></p>
+            <p>Congrats! Now you're ready to start making your own queries and doing interesting stuff with the results.</p>
             <div class="page-nav">
                 <p>
-                    <a class="btn btn-lg btn-primary" href="http-requests.html" role="button">&laquo; Back</a>
-                    <a class="btn btn-lg btn-primary" href="json-response.html" role="button">Next &raquo;</a>
+                    <a class="btn btn-lg btn-primary" href="json-response.html" role="button">&laquo; Back</a>
+                    <a class="btn btn-lg btn-primary" href="final-page.html" role="button">Next &raquo;</a>
                 </p>
             </div>
         </div>
