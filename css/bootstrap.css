@@ -10,12 +10,18 @@ ol.tutorial>li {
   font-size:16px;
 }
 
-ol.tutorial>li>img{
+img.tutorial {
   margin-top:10px;
   max-height:100%;
   max-width:100%;
 }
 
+img.indexPage{
+  height:100px;
+  margin-top:10px;
+  max-height:100%;
+  max-width:100%;
+}
 
 html {
   font-family: sans-serif;

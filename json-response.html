@@ -40,16 +40,15 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Navigation <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li class="dropdown-header">Navigating the Twitch API</li>
-                                <li><a href="background.html">A Few Words on API</a></li>
-                                <li><a href="twitch-client-id.html">Twitch Client ID</a></li>
+                                <li><a href="preview-page.html">The Application</a></li>
+                                <li><a href="twitch-client-id.html">Twitch Client-ID</a></li>
                                 <li><a href="http-requests.html">HTTP Requests</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Embedding Video</li>
-                                <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated link</a></li>
+                                <li><a href="twitch-api-docs.html">Twitch API Documentation</a></li>
+                                <li><a href="json-response.html">JSON Response</a></li>
+                                <li><a href="embed-preview.html">Embedding Previews</a></li>
+                                <li><a href="final-page.html">Final Words</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -73,11 +72,13 @@
             <p>When we our API call is finished, the response is stored as a string in the request object i.e. <code>request.responseText</code></p>
             <p>To convert the string to a JavaScript object, we call the built-in function <code>JSON.parse()</code> and assign it to the variable we will work with.</p>
             <p>If we call <code>console.log(response)</code> at this point, we get the following output in the console.</p>
-            <img src="images/json-response-1.jpg"></img>
+            <p><img class="tutorial" src="images/json-response-1.jpg"></img>
+            </p>
             <p>This may look overwhelming, but it’s actually quite simple to navigate. For example, if we wanted to get the name of the first stream returned, we access it like so <code>response.streams[0].channel.name</code>
             </p>
             <p>To get this, we start at the root of the object and move outward. In this case, response is the root. Root to streams[0] to channel to name. Visually, the movement through the tree looks like this.</p>
-            <img src="images/json-response-2.jpg"></img>
+            <p><img class="tutorial" src="images/json-response-2.jpg"></img>
+            </p>
             <p>Now that we're familiar with the format of our response and how to get it, let's look at how to do useful things with it, such as embedding previews of our queries.</p>
             <div class="page-nav">
                 <p>

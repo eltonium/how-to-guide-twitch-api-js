@@ -40,16 +40,15 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Navigation <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li class="dropdown-header">Navigating the Twitch API</li>
-                                <li><a href="background.html">A Few Words on API</a></li>
-                                <li><a href="twitch-client-id.html">Twitch Client ID</a></li>
+                                <li><a href="preview-page.html">The Application</a></li>
+                                <li><a href="twitch-client-id.html">Twitch Client-ID</a></li>
                                 <li><a href="http-requests.html">HTTP Requests</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Embedding Video</li>
-                                <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated link</a></li>
+                                <li><a href="twitch-api-docs.html">Twitch API Documentation</a></li>
+                                <li><a href="json-response.html">JSON Response</a></li>
+                                <li><a href="embed-preview.html">Embedding Previews</a></li>
+                                <li><a href="final-page.html">Final Words</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -62,13 +61,18 @@
         <!-- Main component for a primary marketing message or call to action -->
         <div class="jumbotron">
             <h1>HTTP Requests Format</h1>
-            <p>In JavaScript, we make HTTP requests through what is known as AJAX (Asynchronous JavaScript and XML). I won’t go into the finer details of AJAX, but you can read up on it on the <a href="https://developer.mozilla.org/en-US/docs/AJAX">Mozila Developer Network</a>. Essentially, we will be working with an XMLHttpRequest object through which we make calls to the API.</p>
+            <p>In JavaScript, we make HTTP requests through what is known as AJAX (Asynchronous JavaScript and XML). I won’t go into the finer details of AJAX, but you can read up on it on the <a href="https://developer.mozilla.org/en-US/docs/AJAX">Mozila Developer Network</a>.
+                Essentially, we will be working with an XMLHttpRequest object through which we make calls to the API.</p>
             <ol class="tutorial">
                 <li> In our application, we start by creating a request object with the line <pre><code>var request = new XMLHttpRequest();</code></pre></li>
-                <li>In the next line, we specify the request type.<pre><code>request.open(requestMethod, queryURL + queryString);</code></pre>We pass req.open two parameters. The request method (GET,POST,PUT,DELETE) and the query. This is how we tell Twitch what information we want. We’ll need to cross-reference the official documentation to figure out how to fill this out. We'll go over how to do this in the next section.</li>
-                <li>Remember our Client-ID? Twitch requires us to send a header containing the Client-ID with every API request. We do this with the following line:<pre><code>request.setRequestHeader("Client-ID", apiKey);</pre></code></li>
-                <li>Next, we tell our application what to do once we receive a response. We’ll come back to this later, but this is the format.<pre><code>request.addEventListener(“load”, function() {...} );</pre></code></li>
-                <li>Finally, we send our request with <pre><code>request.send(null);</pre></code></li>
+                <li>In the next line, we specify the request type.<pre><code>request.open(requestMethod, queryURL + queryString);</code></pre>We pass req.open two parameters. The request method (GET,POST,PUT,DELETE) and the query. This is how we tell Twitch
+                    what information we want. We’ll need to cross-reference the official documentation to figure out how to fill this out. We'll go over how to do this in the next section.</li>
+                <li>Remember our Client-ID? Twitch requires us to send a header containing the Client-ID with every API request. We do this with the following line:<pre><code>request.setRequestHeader("Client-ID", apiKey);</pre></code>
+                </li>
+                <li>Next, we tell our application what to do once we receive a response. We’ll come back to this later, but this is the format.<pre><code>request.addEventListener(“load”, function() {...} );</pre></code>
+                </li>
+                <li>Finally, we send our request with <pre><code>request.send(null);</pre></code>
+                </li>
 
             </ol>
             <p>Now that we know how the general format of an API call, let's learn how to navigate the official Twitch API documentation and fill in <code>request.open(...)</code>.

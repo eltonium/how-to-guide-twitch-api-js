@@ -42,14 +42,13 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li class="dropdown-header">Navigating the Twitch API</li>
-                                <li><a href="background.html">A Few Words on API</a></li>
-                                <li><a href="twitch-client-id.html">Twitch Client ID</a></li>
+                                <li><a href="preview-page.html">The Application</a></li>
+                                <li><a href="twitch-client-id.html">Twitch Client-ID</a></li>
                                 <li><a href="http-requests.html">HTTP Requests</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Embedding Video</li>
-                                <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated link</a></li>
+                                <li><a href="twitch-api-docs.html">Twitch API Documentation</a></li>
+                                <li><a href="json-responses.html">JSON Response</a></li>
+                                <li><a href="embed-preview.html">Embedding Previews</a></li>
+                                <li><a href="final-page.html">Final Words</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -66,21 +65,23 @@
             <ol class="tutorial">
                 <li> If you have not done so already, register an account and sign in on the <a href="https://www.twitch.tv/">Twitch home page</a></li>
                 <li>Navigate to the <a href="https://www.twitch.tv/settings/connections">Connections page in Twitch settings</a>
-                    <br/><img src="images/twitch-client-id-1.jpg"></img>
+                    <br/><img class="tutorial" src="images/twitch-client-id-1.jpg"></img>
                 </li>
                 <li>From there scroll down to the <i>OTHER CONNECTIONS</i> section and click on <i>Register your application</i>
-                    <br/><img src="images/twitch-client-id-2.jpg"></img>
+                    <br/><img class="tutorial" src="images/twitch-client-id-2.jpg"></img>
                 </li>
-                <li>Fill in the application form. The Redirect URI is important if your application requires users to perform any sign-in. For now, set this as <i>http://localhost</i> for testing.<img src="images/twitch-client-id-3.jpg"></img>
+                <li>Fill in the application form. The Redirect URI is important if your application requires users to perform any sign-in. For now, set this as <i>http://localhost</i> for testing.
+                    <br/><img class="tutorial" src="images/twitch-client-id-3.jpg"></img>
                 </li>
-                <li>You should now receive a Client ID. For tutorial purposes, we will use <code>ti1wfmhldcfp8b5qmepnjqx6scaoow6</code>. However, this is normally not shared and I encourage you to substitute your own ID in place of this.<img src="images/twitch-client-id-4.jpg"></img>
+                <li>You should now receive a Client ID. For tutorial purposes, we will use <code>1zw23lfvfnmt8lou01dncryhevk3hky</code>. However, this is normally not shared and I highly encourage you to <a href="http://billpatrianakos.me/blog/2013/09/12/securing-api-keys-in-a-client-side-javascript-app/">read up on securing your key for client-side javascript.</a>
+                    <br/><img class="tutorial" src="images/twitch-client-id-4.jpg"></img>
                 </li>
             </ol>
-            <p>Congratulations, you have your very own Client ID and are ready to start making calls to the Twitch API.
+            <p>Now that we have our key, we are ready to start making API calls.
             </p>
             <div class="page-nav">
                 <p>
-                    <a class="btn btn-lg btn-primary" href="index.html" role="button">&laquo; Back</a>
+                    <a class="btn btn-lg btn-primary" href="preview-page.html" role="button">&laquo; Back</a>
                     <a class="btn btn-lg btn-primary" href="http-requests.html" role="button">Next &raquo;</a>
                 </p>
             </div>
